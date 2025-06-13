@@ -19,7 +19,28 @@ export default function PlanetDetail() {
         <li>Gravity: {planet.gravity}</li>
         <li>Orbital Period: {planet.orbitalPeriod}</li>
         <li>Distance from Sun: {planet.distance}</li>
-        <li>Moons: {planet.moons}</li>
+        <li>
+          Moons:{" "}
+          {planet.moons.length === 0
+            ? "None"
+            : planet.moons.map((moon, i) => (
+                <span key={moon.id}>
+                  {moon.wikiLink ? (
+                    <a
+                      href={moon.wikiLink}
+                      className="text-blue-500 dark:text-blue-300 underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {moon.name}
+                    </a>
+                  ) : (
+                    moon.name
+                  )}
+                  {i < planet.moons.length - 1 ? ", " : ""}
+                </span>
+              ))}
+        </li>
       </ul>
       <div className="space-x-4">
         <a href={planet.nasaLink} className="text-blue-500 dark:text-blue-300" target="_blank">NASA</a>

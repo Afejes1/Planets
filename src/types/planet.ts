@@ -1,3 +1,13 @@
+export interface Moon {
+  id: string;
+  name: string;
+  image: string;
+  orbitRadius: number;
+  orbitSpeed: number;
+  size: number;
+  wikiLink?: string;
+}
+
 export interface Planet {
   id: string;
   name: string;
@@ -7,7 +17,7 @@ export interface Planet {
   gravity: string;
   orbitalPeriod: string;
   distance: string;
-  moons: number;
+  moons: Moon[]; // changed from number to Moon[]
   orbitRadius: number;
   orbitSpeed: number;
   size: number;
