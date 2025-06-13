@@ -9,8 +9,8 @@ export default function PlanetDetail() {
   if (!planet) return <p className="p-4">Planet not found.</p>;
 
   return (
-    <div className="p-4 space-y-4">
-      <Link to="/" className="text-blue-500">&larr; Back</Link>
+    <div className="p-4 space-y-4 text-gray-900 dark:text-gray-100">
+      <Link to="/" className="text-blue-500 dark:text-blue-300">&larr; Back</Link>
       <h1 className="text-3xl font-bold">{planet.name}</h1>
       <img src={planet.image} alt={planet.name} className="max-w-sm" />
       <ul className="list-disc pl-6">
@@ -22,8 +22,8 @@ export default function PlanetDetail() {
         <li>Moons: {planet.moons}</li>
       </ul>
       <div className="space-x-4">
-        <a href={planet.nasaLink} className="text-blue-500" target="_blank">NASA</a>
-        <a href={planet.wikiLink} className="text-blue-500" target="_blank">Wikipedia</a>
+        <a href={planet.nasaLink} className="text-blue-500 dark:text-blue-300" target="_blank">NASA</a>
+        <a href={planet.wikiLink} className="text-blue-500 dark:text-blue-300" target="_blank">Wikipedia</a>
       </div>
     </div>
   );
