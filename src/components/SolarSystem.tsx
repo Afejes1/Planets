@@ -3,9 +3,29 @@ import { Link } from 'react-router-dom';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import planets from '../data/planets';
 
+// Logarithmic scaling function
+function getOrbitRadius(distanceValue: number, minRadius: number, maxRadius: number, minDist: number, maxDist: number) {
+  // log10 scaling
+  const logMin = Math.log10(minDist);
+  const logMax = Math.log10(maxDist);
+  const logVal = Math.log10(distanceValue);
+  return minRadius + ((logVal - logMin) / (logMax - logMin)) * (maxRadius - minRadius);
+}
+
 export default function SolarSystem() {
-  // Find the largest orbit radius for canvas sizing
-  const maxOrbit = Math.max(...planets.map(p => p.orbitRadius)) + 40;
+  // Find min/max distances for scaling
+  const minDist = Math.min(...planets.map(p => p.distanceValue));
+  const maxDist = Math.max(...planets.map(p => p.distanceValue));
+  const minRadius = 60;
+  const maxRadius = 380;
+
+  // Precompute orbit radii for all planets
+  const planetOrbits = planets.map(p => ({
+    ...p,
+    orbitRadius: getOrbitRadius(p.distanceValue, minRadius, maxRadius, minDist, maxDist)
+  }));
+
+  const maxOrbit = Math.max(...planetOrbits.map(p => p.orbitRadius)) + 40;
 
   return (
     <div
@@ -20,7 +40,7 @@ export default function SolarSystem() {
           wheel={{ step: 0.1 }}
           doubleClick={{ disabled: true }}
           panning={{ velocityDisabled: true }}
-          centerOnInit // center the content on mount
+          centerOnInit
         >
           <TransformComponent>
             <div
@@ -33,7 +53,7 @@ export default function SolarSystem() {
               }}
             >
               {/* Render orbits */}
-              {planets.map(planet => (
+              {planetOrbits.map(planet => (
                 <div
                   key={planet.id + '-orbit'}
                   className="absolute pointer-events-none"
@@ -51,7 +71,7 @@ export default function SolarSystem() {
                 />
               ))}
               {/* Render planets moving along orbits */}
-              {planets.map(planet => (
+              {planetOrbits.map(planet => (
                 <motion.div
                   key={planet.id}
                   className="absolute"
@@ -89,6 +109,10 @@ export default function SolarSystem() {
                         draggable={false}
                       />
                     </Link>
+                    {/* Distance label */}
+                    <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 text-xs text-center text-gray-800 dark:text-gray-200 select-none pointer-events-none w-max">
+                      {planet.distance}
+                    </div>
                     {/* Render moons as sub-orbits */}
                     {planet.moons && planet.moons.length > 0 && (
                       <div className="absolute inset-0 pointer-events-none">

@@ -40,8 +40,9 @@ const planets: Planet[] = [
     gravity: '3.7 m/s²',
     orbitalPeriod: '88 days',
     distance: '57.9 million km',
+    distanceValue: 57.9, // add this
     moons: [],
-    orbitRadius: 60,
+    // orbitRadius: 60, // remove this
     orbitSpeed: 20,
     size: 14,
     nasaLink: 'https://solarsystem.nasa.gov/planets/mercury/overview/',
@@ -56,8 +57,9 @@ const planets: Planet[] = [
     gravity: '8.87 m/s²',
     orbitalPeriod: '225 days',
     distance: '108.2 million km',
+    distanceValue: 108.2,
     moons: [],
-    orbitRadius: 90,
+    // orbitRadius: 90,
     orbitSpeed: 30,
     size: 18,
     nasaLink: 'https://solarsystem.nasa.gov/planets/venus/overview/',
@@ -72,6 +74,7 @@ const planets: Planet[] = [
     gravity: '9.807 m/s²',
     orbitalPeriod: '365.25 days',
     distance: '149.6 million km',
+    distanceValue: 149.6,
     moons: [
       {
         id: 'moon',
@@ -83,7 +86,7 @@ const planets: Planet[] = [
         wikiLink: 'https://en.wikipedia.org/wiki/Moon'
       }
     ],
-    orbitRadius: 120,
+    // orbitRadius: 120,
     orbitSpeed: 40,
     size: 20,
     nasaLink: 'https://solarsystem.nasa.gov/planets/earth/overview/',
@@ -98,6 +101,7 @@ const planets: Planet[] = [
     gravity: '3.721 m/s²',
     orbitalPeriod: '687 days',
     distance: '227.9 million km',
+    distanceValue: 227.9,
     moons: [
       {
         id: 'phobos',
@@ -118,7 +122,7 @@ const planets: Planet[] = [
         wikiLink: 'https://en.wikipedia.org/wiki/Deimos_(moon)'
       }
     ],
-    orbitRadius: 150,
+    // orbitRadius: 150,
     orbitSpeed: 50,
     size: 16,
     nasaLink: 'https://solarsystem.nasa.gov/planets/mars/overview/',
@@ -133,8 +137,9 @@ const planets: Planet[] = [
     gravity: 'N/A',
     orbitalPeriod: '3-6 years',
     distance: '329-478 million km',
+    distanceValue: 400, // average
     moons: [],
-    orbitRadius: 180,
+    // orbitRadius: 180,
     orbitSpeed: 60,
     size: 10,
     nasaLink: 'https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/in-depth/',
@@ -149,6 +154,7 @@ const planets: Planet[] = [
     gravity: '24.79 m/s²',
     orbitalPeriod: '11.86 years',
     distance: '778.5 million km',
+    distanceValue: 778.5,
     moons: [
       {
         id: 'io',
@@ -187,7 +193,7 @@ const planets: Planet[] = [
         wikiLink: 'https://en.wikipedia.org/wiki/Callisto_(moon)'
       }
     ],
-    orbitRadius: 220,
+    // orbitRadius: 220,
     orbitSpeed: 70,
     size: 32,
     nasaLink: 'https://solarsystem.nasa.gov/planets/jupiter/overview/',
@@ -202,6 +208,7 @@ const planets: Planet[] = [
     gravity: '10.44 m/s²',
     orbitalPeriod: '29.45 years',
     distance: '1.43 billion km',
+    distanceValue: 1430,
     moons: [
       {
         id: 'titan',
@@ -267,7 +274,7 @@ const planets: Planet[] = [
         wikiLink: 'https://en.wikipedia.org/wiki/Dione_(moon)'
       }
     ],
-    orbitRadius: 260,
+    // orbitRadius: 260,
     orbitSpeed: 80,
     size: 28,
     nasaLink: 'https://solarsystem.nasa.gov/planets/saturn/overview/',
@@ -282,8 +289,9 @@ const planets: Planet[] = [
     gravity: '8.87 m/s²',
     orbitalPeriod: '84 years',
     distance: '2.87 billion km',
+    distanceValue: 2870,
     moons: [],
-    orbitRadius: 300,
+    // orbitRadius: 300,
     orbitSpeed: 90,
     size: 24,
     nasaLink: 'https://solarsystem.nasa.gov/planets/uranus/overview/',
@@ -298,6 +306,7 @@ const planets: Planet[] = [
     gravity: '11.15 m/s²',
     orbitalPeriod: '164.8 years',
     distance: '4.5 billion km',
+    distanceValue: 4500,
     moons: [
       {
         id: 'triton',
@@ -309,7 +318,7 @@ const planets: Planet[] = [
         wikiLink: 'https://en.wikipedia.org/wiki/Triton_(moon)'
       }
     ],
-    orbitRadius: 340,
+    // orbitRadius: 340,
     orbitSpeed: 100,
     size: 24,
     nasaLink: 'https://solarsystem.nasa.gov/planets/neptune/overview/',
@@ -324,6 +333,7 @@ const planets: Planet[] = [
     gravity: '0.62 m/s²',
     orbitalPeriod: '248 years',
     distance: '5.9 billion km',
+    distanceValue: 5900,
     moons: [
       {
         id: 'charon',
@@ -335,7 +345,7 @@ const planets: Planet[] = [
         wikiLink: 'https://en.wikipedia.org/wiki/Charon_(moon)'
       }
     ],
-    orbitRadius: 380,
+    // orbitRadius: 380,
     orbitSpeed: 110,
     size: 10,
     nasaLink: 'https://solarsystem.nasa.gov/planets/dwarf-planets/pluto/overview/',
