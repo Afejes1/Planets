@@ -1,8 +1,10 @@
 import { Planet } from '../types/planet';
-import mercuryImg from '../assets/mercury.png';
-import venusImg from '../assets/venus.png';
-import earthImg from '../assets/earth.png';
-import marsImg from '../assets/mars.png';
+
+// Use placeholder images for now
+const mercuryImg = 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg';
+const venusImg = 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg';
+const earthImg = 'https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg';
+const marsImg = 'https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg';
 
 const planets: Planet[] = [
   {
