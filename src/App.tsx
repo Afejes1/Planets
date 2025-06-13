@@ -11,7 +11,10 @@ export default function App() {
     <div className={darkMode ? 'dark' : ''}>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors">
         <header className="p-4 flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold">
+          <Link
+            to="/"
+            className="text-2xl font-bold text-gray-900 dark:text-gray-100"
+          >
             SolarScope
           </Link>
           <button
